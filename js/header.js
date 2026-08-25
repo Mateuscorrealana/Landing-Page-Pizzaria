@@ -10,9 +10,6 @@
         { key: "cardapio", href: "cardapio.html" }, // redundância segura
         { key: "cardapio", href: "cardápio.html" },
         { key: "cardapio", href: "cardápio.html" },
-        { key: "promo", href: "Promoções.html" },     // cobre "Promoções" / "Promo"
-        { key: "promoções", href: "promocoes.html" },
-        { key: "fidelidade", href: "fidelidade.html" },
         { key: "contato", href: "contato.html" }
     ];
 

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ===========================
        CONFIGURAÇÕES
     =========================== */
-    const homePage = 'inicio.html';
+    const homePage = 'index.html';
     const MAX_PIZZAS = 4;
 
     /* ===========================
