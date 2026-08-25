@@ -1,0 +1,244 @@
+/* Esconde mobile no PC */
+.menu-mobile-icon,
+.menu-lateral {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    body {
+        background-color: #000;
+        margin: 0;
+    }
+
+    /* Header ajustado para mobile */
+    header {
+        padding: 20px !important;
+        justify-content: space-between !important;
+    }
+
+    /* Logo menor (igual Figma) */
+    .logo {
+        width: 120px !important;
+        margin: 0 !important;
+        position: static !important;
+    }
+
+    /* Ícones do topo */
+    .icones-topo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 18px !important;
+        margin-right: 0 !important;
+    }
+
+    .login, .carrinho {
+        display: flex !important;
+        top: 3px !important;
+    }
+
+    .icones-topo img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .cabecalho {
+        display: none;
+    }
+
+    .menu-mobile-icon {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    
+    /* Mostra ícone do menu (hambúrguer) */
+    .menu-mobile-icon {
+        display: block !important;
+    }
+
+    #openMenu,
+    #closeMenu {
+        width: 32px !important;
+        cursor: pointer !important;
+    }
+
+    .menu-lateral {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        background-color: #120907;
+        z-index: 999;
+        transition: right 0.3s ease;
+    }
+
+    .menu-lateral.ativo {
+        right: 0;
+    }
+
+
+    /* CONTEÚDO */
+    .conteudo-principal {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 12px;
+        min-height: calc(100vh - 70px);
+    }
+
+    .conteudo-principal>img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6;
+        z-index: 1;
+    }
+
+    /* CARD */
+    .cartao {
+        position: absolute;
+        z-index: 2;
+        background-color: #120907;
+        border-radius: 28px;
+        width: 80%;
+        height: 70%;
+        max-width: 360px;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        margin-top: -210px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* TÍTULO */
+    .cartao h1 {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0;
+        top: -2px;
+    }
+
+    .cartao h1 .res {
+        color: #F2A23A;
+    }
+
+    /* TEXTO PRINCIPAL */
+    .cartao>p {
+        color: #d1d1d1;
+        font-size: 10px;
+        line-height: 1.45;
+        margin: 0;
+        margin-top: -20px;
+    }
+
+    /* BENEFÍCIOS */
+    .icons {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        top: -55px;
+        gap: 12px;
+    }
+
+    
+    .icons img {
+        position: relative;
+        left: 60px;     
+        margin-top: 10px;
+        margin-bottom: -10px;
+        width: 18px;
+        height: 18px;
+        object-fit: cover;
+    }
+
+    .texto-cartao {
+        position: relative;
+        margin-top: -25px;
+        
+    }
+
+    .texto-cartao p {
+        font-size: 13px;
+        line-height: 1.4;
+        margin: 0;
+        margin-top: -5px;
+        color: #fff;
+    }
+
+    /* TEXTO CANCELAMENTO */
+    .cartao-cancela {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cartao-cancela p {
+        font-size: 8px;
+        color: #bdbdbd;
+        top: -60px;
+        right: 30px;
+        line-height: 1.55;
+        word-wrap: break-word;
+        transform: scale(1.30);
+        transform-origin: left top;
+    }
+
+    /* BOTÃO */
+    .cartao-cancela button {
+        width: 100%;
+        right: 20px;
+        background-color: #F2A23A;
+        color: #000;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        top: -20px;
+    }
+
+    /* MASTERCARD */
+    .mastercard {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 5px;
+    }
+
+    .mastercard img {
+        width: 70px;
+        height: 35px;
+        object-fit: cover;
+        margin-left: 590px;
+        margin-top: -130px;
+    }
+}
+
+
+/* ===============================
+       TOAST
+    =============================== */
+.toast,
+.item-remo {
+    position: fixed;
+    width: 80%;
+    max-width: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 9999;
+}

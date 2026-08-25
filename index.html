@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/Pizzaaa’s.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/carrinho.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cabeçalho.css">
+    <link rel="stylesheet" href="respon/headerrespon.css">
+    <link rel="stylesheet" href="style/lateral.css">
+    <link rel="stylesheet" href="respon/respon.css">
+    <title>Pizzaria</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/Pizzaaa’s.svg" class="logo" alt="Logo da Pizzaria">
+        <div class="icones-topo">
+            <div class="carrinho">
+                <img src="favi icons/carrinho.svg" alt="carrinho de compras">
+            </div>
+        </div>
+
+        <nav class="cabecalho">
+            <p>Sobre</p>
+            <p>Cardápio</p>
+            <p>Contato</p>
+        </nav>
+
+        <!-- Ícone de Menu Mobile -->
+        <div class="menu-mobile-icon">
+            <img id="openMenu" src="favi icons/menu.svg" alt="menu" />
+            <img id="closeMenu" src="carrinho/x.svg" alt="fechar" style="display:none;" />
+        </div>
+
+        <!-- Menu lateral mobile -->
+        <div class="menu-lateral" id="menuLateral">
+            <ul>
+                <li>Sobre <span>></span></li>
+                <li>Cardápio <span>></span></li>
+                <li>Contato <span>></span></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main class="conteudo-principal">
+        <div class="texto">
+            <h1>Proporcionando <br><span class="mom">momentos</span> que <br><span class="valem">valem a pena.</span>
+            </h1>
+            <p>Tudo aqui é pensado na sua experiência e em como podemos melhorar o seu dia, fazendo cada minuto e cada
+                conversa valer a <br>pena.</p>
+            <a href="contato.html"><button class="reservar">Vamos lá!</button></a>
+        </div>
+
+        <div class="card">
+            <img src="assets/pizza.svg" alt="pizza">
+        </div>
+    </main>
+
+
+    <!-- Carrinho Lateral -->
+    <aside class="carrinho-lateral" id="carrinhoLateral" aria-hidden="true">
+        <div class="topo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <button id="fecharCarrinho" class="btn-fechar" aria-label="Fechar carrinho">
+                <img src="carrinho/x.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <div class="icone-vazio" id="iconeVazio">
+            <img src="carrinho/SHOPPING BASKET 1.png" alt="Carrinho vazio">
+            <p>Seu carrinho está vazio</p>
+        </div>
+
+        <div class="itens-carrinho" id="itensCarrinho"></div>
+
+        <div class="footer-carrinho">
+            <div class="total-line">
+                <p>Total:</p>
+                <strong>R$ <span id="totalCarrinho">0,00</span></strong>
+            </div>
+            <button class="finalizar-pedido">Finalizar Pedido</button>
+        </div>
+    </aside>
+
+    <!-- Blur do fundo -->
+    <div class="blur-fundo" id="blurFundo"></div>
+
+    <!-- Alerta -->
+    <div class="alerta-max" id="alertaMax" role="dialog" aria-modal="true" aria-hidden="true">
+        <p>Você só pode escolher até <strong>4</strong> sabores 🍕</p>
+        <button id="fecharAlerta" class="btn-alerta">Ok</button>
+    </div>
+
+
+    <div id="toast" class="toast">Item adicionado!</div>
+    <div id="item-remo" class="item-remo">Item removido!</div>
+    <div id="footer"></div>
+
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+    <script src="/js/script.js" defer></script>
+    <script src="/js/header.js" defer></script>
+</body>
+
+</html>
