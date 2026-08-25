@@ -1,6 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ===========================
+   FINALIZAR PEDIDO -> WHATSAPP
+=========================== */
+const NUMERO_WHATSAPP = "5547999999999"; // <-- troque pelo número real (só dígitos, com 55 + DDD + número)
+
+const btnFinalizar = document.querySelector(".finalizar-pedido");
+
+if (btnFinalizar) {
+    btnFinalizar.addEventListener("click", () => {
+
+        if (carrinho.length === 0) {
+            return; // não faz nada se o carrinho estiver vazio
+        }
+
+        let mensagem = "Olá! Gostaria de fazer o seguinte pedido:%0A%0A";
+
+        carrinho.forEach((item) => {
+            mensagem += `• ${item.qty}x ${item.nome} - R$ ${(item.preco * item.qty).toFixed(2)}%0A`;
+        });
+
+        const totalPedido = carrinho.reduce((s, it) => s + it.preco * it.qty, 0).toFixed(2);
+        mensagem += `%0A*Total: R$ ${totalPedido}*`;
+
+        const link = `https://wa.me/${NUMERO_WHATSAPP}?text=${mensagem}`;
+
+        window.open(link, "_blank");
+    });
+}
+
+    /* ===========================
        CONFIGURAÇÕES
     =========================== */
     const homePage = 'index.html';

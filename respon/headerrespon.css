@@ -150,3 +150,44 @@
 
 }
 
+/* ==================================================
+   FAIXA LAPTOP/TABLET GRANDE (951px – 1400px)
+   Corrige sobreposição do carrinho/ícones com o
+   nav "Contato" — o .cabecalho fixed com % não
+   escala bem nessa faixa de telas
+================================================== */
+@media (min-width: 951px) and (max-width: 1400px) {
+
+    header {
+        padding: 0 30px;
+    }
+
+    .logo {
+        margin-left: 0;
+        order: 1;
+    }
+
+    .cabecalho {
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        display: flex;
+        gap: 20px;
+        flex-shrink: 0;
+        order: 2;
+        margin: 0 auto;
+    }
+
+    .cabecalho p {
+        margin: 0 10px;
+        top: auto;
+    }
+
+    .icones-topo {
+        margin-right: 0;
+        flex-shrink: 0;
+        order: 3;
+    }
+}
